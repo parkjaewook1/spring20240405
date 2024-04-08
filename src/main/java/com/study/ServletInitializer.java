@@ -1,4 +1,4 @@
-package com.spring20240405;
+package com.study;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
