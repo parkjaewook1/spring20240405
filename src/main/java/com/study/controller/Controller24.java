@@ -47,6 +47,7 @@ public class Controller24 {
 
     @GetMapping("sub2")
     public void method2(@ModelAttribute("customers") ArrayList<MyBean242> list) throws Exception {
+
         String sql = """
                 SELECT CustomerName, City, Country
                 FROM Customers
