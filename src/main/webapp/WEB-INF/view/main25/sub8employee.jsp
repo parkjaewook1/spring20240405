@@ -27,8 +27,6 @@
     <h4>조회된 직원이 없습니다.</h4>
 </c:if>
 <c:if test="${not emptyemployee}">
-
-
     <table>
         <thead>
         <tr>
