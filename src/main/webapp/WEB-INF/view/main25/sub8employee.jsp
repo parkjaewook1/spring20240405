@@ -1,52 +1,52 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html>
 <head>
     <title>Title</title>
     <style>
-        table, td {
+        table, tr, th, td {
             border: 1px solid black;
             border-collapse: collapse;
         }
 
-        th {
-            border: 1px solid orangered;
+        table {
+            width: 100%;
         }
-
-
     </style>
 </head>
 <body>
-<h3>직원 목록</h3>
+<h3>직원 검색</h3>
 <form>
-    <input value="${prevsearch}" type="text" name="search" placeholder="조회할 직원이름 입력">
+    이름
+    <input value="${prevsearch}" type="text" placeholder="조회할 이름을 입력하세요." name="name">
     <button>조회</button>
 </form>
-<hr>
-<c:if test="${empty employees}" var="emptyemployee">
-    <h4>조회된 직원이 없습니다.</h4>
-</c:if>
-<c:if test="${not emptyemployee}">
-    <table>
-        <thead>
-        <tr>
-            <th>No.</th>
-            <th>Last Name</th>
-            <th>First Name</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${employees}" var="employee" varStatus="status">
-            <tr>
-                <th>${status.count}</th>
-                <th>${employee.lastName}</th>
-                <th>${employee.firstName}</th>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-</c:if>
 
+<hr>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>birth</th>
+        <th>photo</th>
+        <th>notes</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach items="${employees}" var="employee">
+        <tr>
+            <td>${employee.id}</td>
+            <td>${employee.firstName}</td>
+            <td>${employee.lastName}</td>
+            <td>${employee.birthDate}</td>
+            <td>${employee.photo}</td>
+            <td>${employee.notes}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
 
 </body>
 </html>

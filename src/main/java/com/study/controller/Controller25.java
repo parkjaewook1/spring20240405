@@ -275,7 +275,7 @@ public class Controller25 {
     // 조회 문자열이 last name 또는 first name 에 포함된 직원들 조회 메소드 작성
 
     @GetMapping("sub8")
-    public String method8(String search, Model model) throws SQLException {
+    public String method8(String name, Model model) throws SQLException {
         var list = new ArrayList<MyBean256Employee>();
         String sql = """
                 SELECT*
@@ -283,22 +283,26 @@ public class Controller25 {
                 WHERE lastname LIKE ?
                 OR  firstname LIKE ?
                 """;
-        String keyword = "%" + search + "%";
+
         Connection conn = dataSource.getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, keyword);
-        pstmt.setString(2, keyword);
+        pstmt.setString(1, "%" + name + "%");
+        pstmt.setString(2, "%" + name + "%");
         ResultSet rs = pstmt.executeQuery();
         try (rs; conn; pstmt) {
             while (rs.next()) {
                 MyBean256Employee obj = new MyBean256Employee();
+                obj.setId(rs.getInt(1));
                 obj.setLastName(rs.getString(2));
                 obj.setFirstName(rs.getString(3));
+                obj.setBirthDate(rs.getString(4));
+                obj.setPhoto(rs.getString(5));
+                obj.setNotes(rs.getString(6));
 
                 list.add(obj);
             }
         }
-        model.addAttribute("prevsearch", search);
+        model.addAttribute("prevsearch", name);
         model.addAttribute("employees", list);
 
         return "main25/sub8employee";
