@@ -28,7 +28,7 @@
     <div>
         FirstName
         <input type="text" name="firstName">
-    </div
+    </div>
 
     <div>
         BirthDate
