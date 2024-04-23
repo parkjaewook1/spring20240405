@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-// Inversion Of Controll (IOC)
+// Inversion Of Control (IOC)
 @Component
 public class Mapper01 {
 

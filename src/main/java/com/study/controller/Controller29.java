@@ -1,7 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean254Customer;
-import com.study.domain.MyBean256Employee;
+import com.study.domain.MyBean258Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -95,7 +95,7 @@ public class Controller29 {
 
             try (pstmt; rs; conn) {
                 if (rs.next()) {
-                    MyBean256Employee E = new MyBean256Employee();
+                    MyBean258Employee E = new MyBean258Employee();
                     E.setId(rs.getInt(1));
                     E.setLastName(rs.getString(2));
                     E.setFirstName(rs.getString(3));

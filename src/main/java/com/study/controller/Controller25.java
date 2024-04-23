@@ -276,7 +276,7 @@ public class Controller25 {
 
     @GetMapping("sub8")
     public String method8(String name, Model model) throws SQLException {
-        var list = new ArrayList<MyBean256Employee>();
+        var list = new ArrayList<MyBean258Employee>();
         String sql = """
                 SELECT*
                 FROM Employees
@@ -291,7 +291,7 @@ public class Controller25 {
         ResultSet rs = pstmt.executeQuery();
         try (rs; conn; pstmt) {
             while (rs.next()) {
-                MyBean256Employee obj = new MyBean256Employee();
+                MyBean258Employee obj = new MyBean258Employee();
                 obj.setId(rs.getInt(1));
                 obj.setLastName(rs.getString(2));
                 obj.setFirstName(rs.getString(3));

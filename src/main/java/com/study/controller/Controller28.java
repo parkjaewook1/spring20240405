@@ -1,7 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean254Customer;
-import com.study.domain.MyBean256Employee;
+import com.study.domain.MyBean258Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -63,7 +63,7 @@ public class Controller28 {
     }
 
     @PostMapping("sub2")
-    public String method4(MyBean256Employee employee, RedirectAttributes rttr) throws SQLException {
+    public String method4(MyBean258Employee employee, RedirectAttributes rttr) throws SQLException {
         String sql = """
                 INSERT INTO Employees
                 (LastName, FirstName, BirthDate, Photo, Notes)

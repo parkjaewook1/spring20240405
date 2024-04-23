@@ -1,7 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean254Customer;
-import com.study.domain.MyBean256Employee;
+import com.study.domain.MyBean258Employee;
 import com.study.mapper.Mapper01;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -88,7 +88,7 @@ public class Controller30 {
 
             try (rs; pstmt; conn) {
                 if (rs.next()) {
-                    MyBean256Employee e = new MyBean256Employee();
+                    MyBean258Employee e = new MyBean258Employee();
                     e.setId(rs.getInt(1));
                     e.setLastName(rs.getString(2));
                     e.setFirstName(rs.getString(3));
@@ -103,7 +103,7 @@ public class Controller30 {
     }
 
     @PostMapping("sub2/update")
-    public String method4(MyBean256Employee employee, RedirectAttributes rttr) throws SQLException {
+    public String method4(MyBean258Employee employee, RedirectAttributes rttr) throws SQLException {
         String sql = """
                 UPDATE Employees
                 SET 
