@@ -19,3 +19,7 @@ FROM Products
          JOIN Categories
               ON Products.CategoryID = Categories.CategoryID
 WHERE ProductName = 'Chais';
+
+SELECT ProductName, CategoryName
+FROM Products
+         JOIN Categories;
