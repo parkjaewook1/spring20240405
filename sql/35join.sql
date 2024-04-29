@@ -25,7 +25,7 @@ VALUES ('초콜렛'),
 INSERT INTO product
     (name, price, category_id)
 VALUES ('가나', 500, 1),
-       ('페레로로쉐', 700, '1'),
+       ('페레로로쉐', 700, 1),
        ('크런키', 400, 1),
        ('콜라', 300, 2),
        ('사이다', 300, 2),
@@ -40,7 +40,7 @@ FROM product;
 # 카테시안곱
 SELECT *
 FROM product
-         JOIN category;
+         JOIN category1;
 
 # INNER JOIN
 SELECT *

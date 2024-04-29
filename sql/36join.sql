@@ -19,17 +19,18 @@ WHERE p.ProductID = 1;
 # 10번 상품의 이름, 공급자 이름, 공급자의 국가 조회
 # Products, Suppliers
 SELECT p.ProductName, s.SupplierName, s.Country
-FROM Products p
-         JOIN Suppliers s
-              ON p.SupplierID = s.SupplierID
+FROM Suppliers s
+         JOIN Products p
+              ON s.SupplierID = p.SupplierID
 WHERE p.ProductID = 10;
 
 # 10249번 주문(Orders)을 한 고객의 이름(Customers) 조회
 
 SELECT *
 FROM Orders o
-         JOIN Employees e
-              ON o.EmployeeID = e.EmployeeID;
+         JOIN Customers c
+              ON o.CustomerID = c.CustomerID
+WHERE OrderID = 10249;
 
 SELECT s.ShipperName
 FROM Orders o
