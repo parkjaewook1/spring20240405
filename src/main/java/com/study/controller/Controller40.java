@@ -29,7 +29,7 @@ public class Controller40 {
         System.out.println("Controller40.method4");
     }
 
-    @GetMapping("api/someurl3")
+    @GetMapping("/api/someurl3")
     public void method5(@RequestParam("id") Integer id,
                         @RequestParam("name") String name,
                         @RequestParam("email") String email) {
